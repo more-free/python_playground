@@ -667,10 +667,6 @@ class Solution:
                     num[i], num[cur] = num[cur], num[i]
             used.clear()
 
-s = Solution()
-t = s.permuteUnique([-1, 0, 0, 1, 2])
-print len(t), t
-
 # merge intervals
 class Interval:
     def __init__(self, s=0, e=0):
@@ -692,6 +688,17 @@ class Solution:
                 else:
                     ans[-1].end = max(intervals[i].end, ans[-1].end)
         return ans
+
+
+# leetcode, Length of Last Word
+class Solution:
+    # @param s, a string
+    # @return an integer
+    def lengthOfLastWord(self, s):
+        s = s.strip()
+        return len(s) - s.rfind(' ') - 1
+
+
 
 
 
